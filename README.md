@@ -126,6 +126,15 @@ omok_play()	실제 게임 실행 함수
 select_mode()	5x5 또는 10x10 모드 선택
 randomAroundCenter()	초반 AI 중심 근처 착수 유도
 
+<details> <summary>📓 프로젝트 회고</summary>
+MCTS 구현이 처음이라 개념을 파악하는 데 시간이 걸렸지만, 시각적으로 결과를 보며 점진적으로 개선하는 방식이 흥미로웠습니다.
+
+UCT 수식의 역할을 실험하면서 탐색/활용 균형의 중요성을 체감했습니다.
+
+향후에는 AlphaZero 방식의 강화학습 기법과 연계해보고 싶습니다.
+
+</details>
+
 </details>
 🚧 향후 개선 예정
 <details> <summary>🛠️ 개선 및 확장 아이디어</summary>

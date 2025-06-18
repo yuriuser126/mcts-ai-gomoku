@@ -77,6 +77,7 @@ MCTS는 다음의 4단계로 구성됩니다:
 # 1. 실행
 python omok.py
 
+```
 ---
 
 <details> <summary>⌨️ 게임 조작법</summary>

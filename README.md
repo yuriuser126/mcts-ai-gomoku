@@ -6,6 +6,10 @@
 > 📚 참고: 『파이썬으로 만드는 인공지능』
 
 ---
+```markdown
+[![GitHub release](https://img.shields.io/github/v/release/yuriuser126/mcts-ai-gomoku?style=flat-square)](https://github.com/yuriuser126/mcts-ai-gomoku/releases)
+```
+---
 
 ## 📌 프로젝트 소개
 

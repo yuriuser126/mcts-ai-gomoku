@@ -86,3 +86,29 @@ pip install -r requirements.txt
 python gui/main.py
 
 
+## 코드설명
+n: 보드의 한 변 크기 (예: n=15이면 15x15 오목판)
+
+k: 몇 개를 연속으로 두면 승리인지 (일반적으로 k=5)
+
+state: 전체 보드를 1차원 문자열로 표현한 배열 (ex: '------XOXO----' 등)
+
+get_empty: 주변에 돌이 있는 위치만 반환 (MCTS 최적화 목적)
+
+decide_winner: 가로, 세로, 대각선 방향으로 승자 판별
+
+mcts(): 몬테카를로 트리 탐색을 통해 다음 수를 결정
+
+선택 (Selection)
+
+확장 (Expansion)
+
+시뮬레이션 (Simulation)
+
+역전파 / 백트래킹 (Backpropagation)
+
+decide_winner(): 가로, 세로, 대각선 네 방향으로 승자 판별
+
+omok_play(): 게임 초기 설정 (시작 상태, 첫 수 둔 플레이어)
+
+

@@ -106,7 +106,8 @@ python omok.py
 게임 중 q, quit, exit 입력 시 종료
 
 </details>
-📸 플레이 예시
+
+<details> <summary>📸 플레이 예시</summary>
 게임 모드를 선택하세요 (1: 이지모드 5x5, 2: 하드모드 10x10): 1
  01234
 0:-----
@@ -122,6 +123,7 @@ python omok.py
 2:--X--
 3:-----
 4:-----
+</details>
 
 
 🗂️ 파일 구조

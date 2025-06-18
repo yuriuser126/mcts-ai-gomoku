@@ -10,6 +10,9 @@
 
 
 [![GitHub release](https://img.shields.io/github/v/release/yuriuser126/mcts-ai-gomoku?style=flat-square)](https://github.com/yuriuser126/mcts-ai-gomoku/releases)
+![Python Version](https://img.shields.io/badge/python-3.9%2B-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 
 ---
 

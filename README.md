@@ -6,6 +6,8 @@
 > 📚 참고: 『파이썬으로 만드는 인공지능』
 
 ---
+> 오목 게임에 Monte Carlo Tree Search(MCTS) 알고리즘을 적용한 AI 프로젝트입니다.
+
 
 [![GitHub release](https://img.shields.io/github/v/release/yuriuser126/mcts-ai-gomoku?style=flat-square)](https://github.com/yuriuser126/mcts-ai-gomoku/releases)
 
@@ -56,6 +58,13 @@ MCTS는 다음의 4단계로 구성됩니다:
 - 표준 라이브러리만 사용 (`random`, `time`, `math`)
 - 콘솔 기반 인터페이스 (GUI 미사용)
 - 알고리즘 로직 직접 구현
+
+---
+## 🛠️ 환경 구성
+
+```bash
+pip install -r requirements.txt
+```
 
 ---
 

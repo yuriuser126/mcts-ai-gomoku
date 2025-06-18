@@ -1,114 +1,142 @@
+
 # 🎮 Gomoku AI with Monte Carlo Tree Search (MCTS)
 
-> 오목 게임에 몬테카를로 트리 탐색(Monte Carlo Tree Search, MCTS) 알고리즘을 적용한 인공지능 실습 프로젝트입니다.  
-> 📚 참고: 『파이썬으로 만드는 인공지능 』
+> 오목 게임에 **몬테카를로 트리 탐색(MCTS)** 알고리즘을 적용한 인공지능 실습 프로젝트입니다.  
+> 콘솔 기반 UI로 작동하며, 사람과 AI가 대결할 수 있습니다.  
+> 📚 참고: 『파이썬으로 만드는 인공지능』
 
 ---
 
 ## 📌 프로젝트 소개
 
-본 프로젝트는 MCTS(Monte Carlo Tree Search)를 직접 구현하여, 간단한 오목(Gomoku) 게임 환경에 적용해본 개인 실습 프로젝트입니다.  
-MCTS는 비결정론적 게임 AI 설계에 널리 사용되는 알고리즘으로, 강화학습이나 게임 AI 분야의 핵심 개념 중 하나입니다.
+본 프로젝트는 `MCTS(Monte Carlo Tree Search)`를 직접 구현하여 오목(Gomoku) 게임에 적용해 본 **AI 실습 프로젝트**입니다.  
+비결정론적 게임에서 많이 쓰이는 MCTS 알고리즘을 활용해, 시뮬레이션 기반의 AI 플레이어를 제작하고, 사용자와 대결할 수 있는 환경을 구현했습니다.
 
-이 프로젝트는 다음을 목표로 합니다:
+<details>
+<summary>✅ 주요 목표</summary>
 
-- MCTS 기본 개념 학습 및 코드 구현
-- 오목 게임 환경 구성
-- 시뮬레이션 기반 AI 플레이어 구현
-- 탐색 깊이, 시뮬레이션 횟수에 따른 전략 차이 관찰
+- MCTS 알고리즘 작동 원리 학습  
+- 시뮬레이션 기반 의사결정 구현  
+- 오목 게임 환경 구성 (5x5 / 10x10 모드 선택 가능)  
+- 콘솔 기반 인터페이스로 플레이 가능  
+- 사용자 종료 옵션, 입력 예외 처리 등 UX 개선  
+</details>
 
 ---
 
 ## 🧠 사용 알고리즘: MCTS 개요
 
-MCTS는 4단계로 이루어져 있습니다:
+MCTS는 다음의 4단계로 구성됩니다:
 
-1. **Selection**: 루트 노드에서 시작하여 UCB(Upper Confidence Bound) 기준으로 자식 노드 선택
-2. **Expansion**: 선택한 노드에 자식 노드 추가
-3. **Simulation**: 무작위 시뮬레이션으로 게임 종료까지 플레이
-4. **Backpropagation**: 시뮬레이션 결과를 통해 승률 계산 및 상위 노드 업데이트
+<details>
+<summary>🧩 MCTS 4단계</summary>
+
+1. **Selection (선택)**  
+   루트 노드에서 시작해, UCT(Upper Confidence Bound)를 기준으로 자식 노드를 따라 내려갑니다.  
+
+2. **Expansion (확장)**  
+   더 이상 선택할 노드가 없을 때, 새로운 자식 노드를 추가합니다.  
+
+3. **Simulation (시뮬레이션)**  
+   임의의 플레이를 반복하여 승패를 결정합니다.  
+
+4. **Backpropagation (역전파)**  
+   시뮬레이션 결과를 바탕으로 상위 노드들의 승률을 업데이트합니다.  
+</details>
 
 ---
 
 ## 🛠️ 기술 스택
 
 - Python 3.9+
-- tkinter (게임 GUI)
-- numpy
-- [📚 책 기반 구현] 『파이썬으로 만드는 인공지능 』 일부 예제 참고
-
----
-
-## 🖼️ 시연 화면
-
-| MCTS 오목 플레이 예시 |
-|----------------------|
-| ![gomoku-mcts](./assets/screenshot.gif) |
-
----
-
-## 🗂️ 디렉토리 구조
-gomoku-mcts/
-├── mcts/ # MCTS 알고리즘 로직
-│ ├── node.py
-│ ├── mcts.py
-├── gomoku/ # 오목 게임 환경
-│ ├── board.py
-│ ├── game.py
-├── gui/ # tkinter 기반 GUI
-│ ├── main.py
-├── tests/ # 간단한 유닛 테스트
-├── README.md
-└── requirements.txt
-
-yaml
-코드 복사
+- 표준 라이브러리만 사용 (`random`, `time`, `math`)
+- 콘솔 기반 인터페이스 (GUI 미사용)
+- 알고리즘 로직 직접 구현
 
 ---
 
 ## ✅ 주요 기능
 
-- [x] MCTS 트리 구성 및 탐색 로직 구현
-- [x] 시뮬레이션 기반의 AI 플레이어
-- [x] 사용자 vs AI 모드
-- [ ] AI vs AI 모드 (추가 예정)
-- [ ] 탐색 매개변수 조절 실험 기능
+<details>
+<summary>📌 구현 기능 목록</summary>
+
+- [x] MCTS 트리 구성 및 탐색 로직 구현  
+- [x] 시뮬레이션 기반의 AI 플레이어 ('X')  
+- [x] 사용자 vs AI 모드 (사람이 'O')  
+- [x] 게임 종료 시 결과 출력 (승자 또는 무승부)  
+- [x] 게임 종료 명령어 지원 (`q`, `quit`, `exit`)  
+- [x] 5x5(이지), 10x10(하드) 모드 선택 기능  
+- [ ] AI vs AI 모드 (추가 예정)  
+</details>
 
 ---
 
 ## 🧪 실행 방법
 
 ```bash
-# 1. 환경 구성
-pip install -r requirements.txt
-
-# 2. 게임 실행
-python gui/main.py
+# 1. 실행
+python omok.py
 
 
-## 코드설명
-n: 보드의 한 변 크기 (예: n=15이면 15x15 오목판)
+<details> <summary>⌨️ 게임 조작법</summary>
+실행 후 모드 선택:
+1 → 5x5 이지 모드
+2 → 10x10 하드 모드
 
-k: 몇 개를 연속으로 두면 승리인지 (일반적으로 k=5)
+사람 차례에는 x y 형태로 좌표 입력 (예: 3 4)
 
-state: 전체 보드를 1차원 문자열로 표현한 배열 (ex: '------XOXO----' 등)
+게임 중 q, quit, exit 입력 시 종료
 
-get_empty: 주변에 돌이 있는 위치만 반환 (MCTS 최적화 목적)
+</details>
+📸 플레이 예시
+게임 모드를 선택하세요 (1: 이지모드 5x5, 2: 하드모드 10x10): 1
+ 01234
+0:-----
+1:-----
+2:--X--
+3:-----
+4:-----
 
-decide_winner: 가로, 세로, 대각선 방향으로 승자 판별
-
-mcts(): 몬테카를로 트리 탐색을 통해 다음 수를 결정
-
-선택 (Selection)
-
-확장 (Expansion)
-
-시뮬레이션 (Simulation)
-
-역전파 / 백트래킹 (Backpropagation)
-
-decide_winner(): 가로, 세로, 대각선 네 방향으로 승자 판별
-
-omok_play(): 게임 초기 설정 (시작 상태, 첫 수 둔 플레이어)
+사람 차례입니다. (x y 형식 입력, 종료하려면 'q' 입력): 2 1
+ 01234
+0:-----
+1:--O--
+2:--X--
+3:-----
+4:-----
 
 
+🗂️ 파일 구조
+omok.py   # 전체 게임 로직 포함
+
+
+💡 코드 설명
+<details> <summary>🧠 주요 변수 및 함수 설명</summary>
+항목	설명
+n, k	오목판의 크기(n) 및 승리 조건(k 연속)
+state	현재 보드 상태를 1차원 문자열로 표현
+get_empty(state)	비어 있는 위치 리스트 반환
+decide_winner(state)	승자 판별 (가로, 세로, 대각선)
+Move(state, pos, player)	착수 반영
+mcts(state, player)	MCTS 탐색 후 최적 수 결정
+Node 클래스	MCTS 트리의 각 노드 정의
+omok_play()	실제 게임 실행 함수
+select_mode()	5x5 또는 10x10 모드 선택
+randomAroundCenter()	초반 AI 중심 근처 착수 유도
+
+</details>
+🚧 향후 개선 예정
+<details> <summary>🛠️ 개선 및 확장 아이디어</summary>
+ tkinter 기반 GUI 버전 개발
+
+ AI vs AI 자동 플레이 모드
+
+ 탐색 횟수 및 승률 시각화 기능
+
+ MCTS 탐색 깊이 조절 옵션 추가
+
+</details>
+📚 참고 자료
+『파이썬으로 만드는 인공지능』
+
+Wikipedia: Monte Carlo Tree Search
